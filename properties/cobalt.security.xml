@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE users [
+        <!ELEMENT users (user+)>
+        <!ELEMENT user (grants)>
+        <!ELEMENT grants (grant+)>
+        <!ELEMENT grant EMPTY>
+        <!ATTLIST user name CDATA #REQUIRED>
+        <!ATTLIST user password CDATA #REQUIRED>
+        <!ATTLIST user role CDATA #REQUIRED>
+        <!ATTLIST grant operation CDATA #REQUIRED>
+        <!ATTLIST grant available (allow|block) "block">
+        ]>
+<users>
+    <user name="user" password="password" role="USER">
+        <grants>
+            <grant operation="CleanLastErrors"/>
+            <grant operation="SaveConfiguration"/>
+            <grant operation="StartDispatchers"/>
+            <grant operation="AbortDispatchers"/>
+            <grant operation="ResetDispatchers"/>
+            <grant operation="StopDispatchers"/>
+            <grant operation="AddDispatcher"/>
+            <grant operation="RemoveDispatcher"/>
+            <grant operation="StartDispatcher"/>
+            <grant operation="AbortDispatcher"/>
+            <grant operation="ResetDispatcher"/>
+            <grant operation="StopDispatcher"/>
+            <grant operation="Shutdown"/>
+        </grants>
+    </user>
+    <user name="admin" password="password" role="ADMIN">
+        <grants>
+            <grant operation="CleanLastErrors" available="allow"/>
+            <grant operation="SaveConfiguration" available="allow"/>
+            <grant operation="StartDispatchers" available="allow"/>
+            <grant operation="AbortDispatchers" available="allow"/>
+            <grant operation="ResetDispatchers" available="allow"/>
+            <grant operation="StopDispatchers" available="allow"/>
+            <grant operation="AddDispatcher" available="allow"/>
+            <grant operation="RemoveDispatcher" available="allow"/>
+            <grant operation="StartDispatcher" available="allow"/>
+            <grant operation="AbortDispatcher" available="allow"/>
+            <grant operation="ResetDispatcher" available="allow"/>
+            <grant operation="StopDispatcher" available="allow"/>
+            <grant operation="Shutdown" available="allow"/>
+        </grants>
+    </user>
+</users>
